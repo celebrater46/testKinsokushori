@@ -7,12 +7,13 @@ const maxChars = Math.floor(children[1].clientWidth / fontSize);
 
 const separateLine = (line) => {
     const char = line.substr(maxChars - 1, 1);
-    const next = line.substr(maxChars, 1);;
-    if(char === "「" || char === "『"
-        || char === "（" || char === "《"
-        || char === "〈" || char === "【"
-        || char === "〚" || char === "［"
-        || char === "〔" || char === "｛")
+    const next = line.substr(maxChars, 1);
+    if(char.search(/[「『（《〈【〚［〔｛]/) > -1)
+    // if(char === "「" || char === "『"
+    //     || char === "（" || char === "《"
+    //     || char === "〈" || char === "【"
+    //     || char === "〚" || char === "［"
+    //     || char === "〔" || char === "｛")
     {
         return [
             line.substr(0, maxChars - 1),
@@ -37,12 +38,13 @@ const separateLine = (line) => {
                 line.substr(maxChars - 2)
             ];
         }
-    } else if(next === "、" || next === "。"
-        || next === "」" || next === "』"
-        || next === "）" || next === "》"
-        || next === "〉" || next === "】"
-        || next === "〛" || next === "］"
-        || next === "〕" || next === "｝")
+    } else if(next.search(/[、。」』）》〉】〛］〕｝]/) > -1)
+    // } else if(next === "、" || next === "。"
+    //     || next === "」" || next === "』"
+    //     || next === "）" || next === "》"
+    //     || next === "〉" || next === "】"
+    //     || next === "〛" || next === "］"
+    //     || next === "〕" || next === "｝")
     {
         return [
             line.substr(0, maxChars - 1),
@@ -63,3 +65,15 @@ const test = () => {
         console.log(i + ": array[1] == " + array[1]);
     }
 }
+
+// if(char === "「" || char === "『"
+//     || char === "（" || char === "《"
+//     || char === "〈" || char === "【"
+//     || char === "〚" || char === "［"
+//     || char === "〔" || char === "｛") {}
+
+// 、。」』）》〉】〛］〕｝
+
+const testSearch = "。";
+console.log(testSearch.search(/[「『（《〈【〚［〔｛]/));
+console.log(testSearch.search(/[、。」』）》〉】〛］〕｝]/));
