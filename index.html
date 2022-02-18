@@ -2,7 +2,7 @@
 <html lang="jp">
 <head>
     <meta charset="UTF-8">
-    <title>Test Line Break Ruby</title>
+    <title>禁則処理改行制御テスト</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-    <div id="p-1" class="page">
+    <div id="box" class="page">
+        <button onclick="separateLine()">禁則処理対応改行テスト</button>
         <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
         <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９「０１２３４５６７８９０</p>
         <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０」１２３４５６７８９０</p>
